@@ -49,7 +49,7 @@
 
     <div class="container">
         <div class="message">
-            Let's get this bread! Du kommst der ganzen Sache näher!! Das Passwort hast du auch schon, du musst es nur finden!
+            Hier bist du richtig auf der Suche nach deinem Weihnachtsgeschenk! Du weißt auch ganz genau was das Passwort ist!
         </div>
         <h2>Enter the Password</h2>
         <input type="password" id="passwordInput" placeholder="Password">
@@ -61,7 +61,7 @@
     <script>
         function checkPassword() {
             var password = document.getElementById('passwordInput').value;
-            if (password === 'Lebensjahr') {
+            if (password === 'собачка') {
                 window.location.href = 'success.html';  // Redirects to the success page
             } else {
                 document.getElementById('errorMessage').textContent = 'Incorrect password. Please try again.';
