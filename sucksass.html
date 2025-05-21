@@ -3,77 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Protected Page</title>
+    <title>Hint Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-
-        .container {
+            background-color: #fff;
             text-align: center;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        input[type="password"] {
-            padding: 10px;
-            width: 80%;
-            margin: 10px 0;
-            font-size: 16px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .message {
-            color: pink;
-            font-size: 18px;
-            margin-bottom: 15px;
+            padding: 40px;
+            font-family: Arial, sans-serif;
         }
 
         img {
-            max-width: 200px;
-            margin-bottom: 15px;
+            max-width: 90%;
+            height: auto;
+        }
+
+        .hint {
+            color: red;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="integral.png" alt="Riddle Image">
-        <div class="message">
-            Ah nice one! But you're not quite there, sport! NOW RIDDLE ME THIS
-        </div>
-        <h2>Enter the Password</h2>
-        <form method="POST" action="verify.php">
-            <input type="password" name="password" placeholder="Password" required>
-            <br>
-            <button type="submit">Submit</button>
-        </form>
-        <?php
-        if (isset($_GET['error'])) {
-            echo '<p style="color:red;">Incorrect password. Please try again.</p>';
-        }
-        ?>
-    </div>
+    <img src="integral.png" alt="Integral Image">
+    <div class="hint">HINT: The solution sucks ass!</div>
 
 </body>
 </html>
