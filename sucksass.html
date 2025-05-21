@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,37 +48,32 @@
             font-size: 18px;
             margin-bottom: 15px;
         }
+
+        img {
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <img src="integral.png" alt="Riddle Image">
         <div class="message">
             Ah nice one! But you're not quite there, sport! NOW RIDDLE ME THIS
         </div>
         <h2>Enter the Password</h2>
-        <input type="password" id="passwordInput" placeholder="Password">
-        <br>
-        <button onclick="checkPassword()">Submit</button>
-        <p id="errorMessage" style="color:red;"></p>
-    </div>
-
-    <script>
-        // Gehashter Vergleichswert für "Hund" (z. B. einfache base64-codierte Form)
-        const encodedPassword = btoa("28290271");
-
-        function checkPassword() {
-            const userInput = document.getElementById('passwordInput').value;
-            const encodedInput = btoa(userInput); // base64 codieren
-
-            if (encodedInput === encodedPassword) {
-                window.location.href = 'success.html';
-            } else {
-                document.getElementById('errorMessage').textContent = 'Incorrect password. Please try again.';
-            }
+        <form method="POST" action="verify.php">
+            <input type="password" name="password" placeholder="Password" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <?php
+        if (isset($_GET['error'])) {
+            echo '<p style="color:red;">Incorrect password. Please try again.</p>';
         }
-    </script>
+        ?>
+    </div>
 
 </body>
 </html>
-
